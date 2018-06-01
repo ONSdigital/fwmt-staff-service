@@ -1,0 +1,9 @@
+applications:
+- name: fwmt-staff-service-&{SPACE}
+  instances: 1
+  timeout: 180
+  host: fwmt-staff-service-&{SPACE}
+  memory: 1024M
+  path: build/libs/fwmt-staff-service-&{VERSION}.jar
+  services:
+  - fwmt-db
