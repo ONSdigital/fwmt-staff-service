@@ -53,7 +53,8 @@ public class WebDriverController {
       form.setJobTitle(record.get("JobTitle"));
       form.setIsApproved(true);
       form.setPasswordNeverExpires(true);
-      System.out.println(form.toString());
+
+      tmWebDriverService.makeNewUser(form);
     }
   }
 }
