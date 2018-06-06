@@ -40,7 +40,7 @@ public class WebDriverController {
   public void createUsersFromCSV(MultipartFile file) throws IOException {
     Reader reader = new InputStreamReader(file.getInputStream());
 
-    CSVParser parser = CSVFormat.DEFAULT.withHeader().parse(reader);
+    CSVParser parser = CSVFormat.DEFAULT.withHeader().withTrim().parse(reader);
 
     for (CSVRecord record : parser) {
       UserForm form = new UserForm();

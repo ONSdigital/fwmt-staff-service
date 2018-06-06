@@ -15,12 +15,6 @@ targetCompatibility = 1.8
 
 version = '1.0.0'
 
-jar {
-    group = 'uk.gov.ons.fwmt'
-    baseName = 'fwmt-staff-service'
-    version = version
-}
-
 buildscript {
     repositories {
         mavenCentral()
@@ -32,10 +26,10 @@ buildscript {
 
 repositories {
     mavenCentral()
-//     maven { url "http://artifactory.rmdev.onsdigital.uk/artifactory/libs-snapshot" }
-//     maven { url "http://artifactory.rmdev.onsdigital.uk/artifactory/libs-release" }
-//     maven { url "https://oss.sonatype.org/content/repositories/libs-snapshot" }
-//     maven { url "http://repo.maven.apache.org/maven2" }
+    maven { url "http://artifactory.rmdev.onsdigital.uk/artifactory/libs-snapshot" }
+    maven { url "http://artifactory.rmdev.onsdigital.uk/artifactory/libs-release" }
+    maven { url "https://oss.sonatype.org/content/repositories/libs-snapshot" }
+    maven { url "http://repo.maven.apache.org/maven2" }
 }
 
 configurations {
@@ -95,8 +89,8 @@ dependencies {
     compile group: 'org.projectlombok', name: 'lombok', version: '1.16.18'
     compile group: 'org.yaml', name: 'snakeyaml', version: '1.18'
     compile group: 'org.apache.commons', name: 'commons-csv', version: '1.5'
-    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.8.0'
-    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.8.0'
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.0'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.0'
     compile(files(genJaxb.classesDir).builtBy(genJaxb))
     jaxb "com.sun.xml.bind:jaxb-xjc:2.1.7"
 
