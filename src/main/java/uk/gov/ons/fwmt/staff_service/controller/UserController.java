@@ -18,21 +18,24 @@ public class UserController {
 
   @PostMapping(produces = "application/json")
   public ResponseEntity<?> createUser(User user) {
-
+    // TODO implement
+    return null;
   }
 
   @PatchMapping(produces = "application/json")
   public ResponseEntity<?> updateUser(Long userId, User user) {
-
+    // TODO implement
+    return null;
   }
 
   @GetMapping(produces = "application/json")
   public List<User> listUsers() {
-
+    // TODO implement
+    return null;
   }
 
   @DeleteMapping(produces = "application/json")
   public void deleteUsers(Long userId) {
-
+    // TODO implement
   }
 }
