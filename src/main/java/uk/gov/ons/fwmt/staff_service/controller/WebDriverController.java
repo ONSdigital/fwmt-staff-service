@@ -54,6 +54,8 @@ public class WebDriverController {
       form.setIsApproved(true);
       form.setPasswordNeverExpires(true);
 
+      System.out.println(form);
+
       tmWebDriverService.makeNewUser(form);
     }
   }
