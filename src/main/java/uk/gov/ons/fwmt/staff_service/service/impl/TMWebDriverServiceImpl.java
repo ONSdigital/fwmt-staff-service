@@ -131,8 +131,8 @@ public class TMWebDriverServiceImpl implements TMWebDriverService {
             .method(Connection.Method.POST)
             .execute();
 
-        System.out.println(response.statusCode());
-        System.out.println(response.body());
+        log.info(Integer.toString(response.statusCode()));
+        log.info(response.body());
 
         // TODO verify success
 
