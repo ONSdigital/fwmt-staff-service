@@ -7,6 +7,7 @@ info:
   built: @timestamp@
 
 server:
+  contextPath: /staff
   port: 9092
 
 project:
