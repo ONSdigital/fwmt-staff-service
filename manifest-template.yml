@@ -8,7 +8,7 @@ applications:
   services:
   - 'fwmt-db'
   routes:
-  - route: '&{INTERNAL_DOMAIN}/jobs'
-  - route: '&{EXTERNAL_DOMAIN}/jobs'
+  - route: '&{INTERNAL_DOMAIN}/&{PATH}'
+  - route: '&{EXTERNAL_DOMAIN}/&{PATH}'
   env:
   - SPRING_APPLICATION_JSON: '&{SPRING_JSON}'
