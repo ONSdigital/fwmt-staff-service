@@ -1,9 +1,14 @@
+---
 applications:
-- name: fwmt-staff-service-&{SPACE}
-  instances: 1
+- name: '&{NAME}-&{SPACE}'
+  instances: &{INSTANCES}
   timeout: 180
-  host: fwmt-staff-service-&{SPACE}
   memory: 1024M
-  path: build/libs/fwmt-staff-service-&{VERSION}.jar
+  path: 'build/libs/&{NAME}.jar'
   services:
-  - fwmt-db
+  - 'fwmt-db'
+  routes:
+  - route: '&{INTERNAL_DOMAIN}/jobs'
+  - route: '&{EXTERNAL_DOMAIN}/jobs'
+  env:
+  - SPRING_APPLICATION_JSON: '&{SPRING_JSON}'
