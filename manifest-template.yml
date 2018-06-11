@@ -5,7 +5,6 @@ applications:
   timeout: 180
   memory: 1024M
   path: 'build/libs/&{NAME}-&{VERSION}.jar'
-  no-route: true
   routes:
   - route: '&{INTERNAL_DOMAIN}/&{PATH}'
   - route: '&{EXTERNAL_DOMAIN}/&{PATH}'
