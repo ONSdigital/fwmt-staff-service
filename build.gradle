@@ -108,11 +108,11 @@ dependencies {
 processResources {
     filter ReplaceTokens, tokens: [
             "project.artifactId": "name",
-            "project.version": "version",
-            "scm.url": "url",
-            "buildNumber": "buildnumber",
-            "scmBranch": "branch",
-            "timestamp": "timestamp",
+            "project.version"   : "version",
+            "scm.url"           : "url",
+            "buildNumber"       : "buildnumber",
+            "scmBranch"         : "branch",
+            "timestamp"         : "timestamp",
     ]
 }
 

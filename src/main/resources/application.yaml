@@ -10,8 +10,15 @@ server:
   contextPath: /staff
   port: 9092
 
-project:
-  basedir: ${basedir}
+spring:
+  application:
+    name: fwmt-job-service
+  http.multipart:
+    max-file-size: 12800MB
+    max-request-size: 12800MB
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
 
 management.endpoint.health.show-details: always
 
@@ -29,8 +36,8 @@ logging:
     file: "%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n"
 
 security.user:
-  name: user
-  password: password
+  name: "user"
+  password: "password"
 
 totalmobile:
   username: "..."
