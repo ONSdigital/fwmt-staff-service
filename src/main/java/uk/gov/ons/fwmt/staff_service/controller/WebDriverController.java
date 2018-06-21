@@ -41,33 +41,33 @@ public class WebDriverController {
     tmWebDriverService.makeNewUsers(userForms);
   }
 
-//  @PostMapping(value = "/createUsersFromCSV", produces = "application/json")
-//  public void createUsersFromCSV(MultipartFile file) throws IOException {
-//    Reader reader = new InputStreamReader(file.getInputStream());
-//
-//    CSVParser parser = CSVFormat.DEFAULT.withHeader().withTrim().parse(reader);
-//
-//    for (CSVRecord record : parser) {
-//      UserForm form = new UserForm();
-//      form.setEmail(record.get("Email"));
-//      form.setForename(record.get("Firstname"));
-//      form.setSurname(record.get("Lastname"));
-//      form.setUserName(record.get("Username"));
-//      form.setTelNo(record.get("ContactNumber"));
-//      form.setPassword(record.get("Password"));
-//      form.setJobTitle(record.get("JobTitle"));
-//      form.setIsApproved(true);
-//      form.setPasswordNeverExpires(true);
-//
-//      log.info(form.toString());
-//
-//      tmWebDriverService.makeNewUser(form);
-//    }
-//  }
+  @PostMapping(value = "/createUsersFromCSV", produces = "application/json")
+  public void createUsersFromCSV(MultipartFile file) throws IOException {
+    Reader reader = new InputStreamReader(file.getInputStream());
+
+    CSVParser parser = CSVFormat.DEFAULT.withHeader().withTrim().parse(reader);
+
+    for (CSVRecord record : parser) {
+      UserForm form = new UserForm();
+      form.setEmail(record.get("Email"));
+      form.setForename(record.get("Firstname"));
+      form.setSurname(record.get("Lastname"));
+      form.setUserName(record.get("Username"));
+      form.setTelNo(record.get("ContactNumber"));
+      form.setPassword(record.get("Password"));
+      form.setJobTitle(record.get("JobTitle"));
+      form.setIsApproved(true);
+      form.setPasswordNeverExpires(true);
+
+      log.info(form.toString());
+
+      tmWebDriverService.makeNewUser(form);
+    }
+  }
 
 
-  @RequestMapping(method = RequestMethod.POST,value = "/createUsersFromCSV", produces = "application/json", consumes = "multipart/form-data")
-  public void createUsersFromCSV(@RequestParam("file") MultipartFile file) throws IOException {
+  @RequestMapping(method = RequestMethod.POST,value = "/addUsersFromCSV", produces = "application/json", consumes = "multipart/form-data")
+  public void AddUsersFromCSV(@RequestParam("file") MultipartFile file) throws IOException {
 
     Reader reader = new InputStreamReader(file.getInputStream());
     CSVParser parser = CSVFormat.DEFAULT.withHeader().withTrim().parse(reader);
@@ -79,7 +79,7 @@ public class WebDriverController {
       userDTO.setActiveDate(false);
       userDTO.setDeputyNo("");
 
-      log.info(userDTO.toString());
+      log.info("Adding user: " + userDTO.toString());
 
       userCreationService.makeNewUser(userDTO);
 
