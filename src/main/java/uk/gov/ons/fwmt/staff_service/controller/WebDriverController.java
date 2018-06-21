@@ -75,7 +75,7 @@ public class WebDriverController {
     for (CSVRecord record : parser) {
       UserDTO userDTO = new UserDTO();
       userDTO.setAuthNo(record.get("Authno"));
-      userDTO.setTmUsername(record.get("UserDTO Name"));
+      userDTO.setTmUsername(record.get("User Name"));
       userDTO.setActiveDate(false);
       userDTO.setDeputyNo("");
 
