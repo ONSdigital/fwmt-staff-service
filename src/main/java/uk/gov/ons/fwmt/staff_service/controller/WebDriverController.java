@@ -24,9 +24,6 @@ public class WebDriverController {
   private TMWebDriverService tmWebDriverService;
 
   @Autowired
-  private UserCreationService userCreationService;
-
-  @Autowired
   public WebDriverController(TMWebDriverService tmWebDriverService) {
     this.tmWebDriverService = tmWebDriverService;
   }
@@ -66,23 +63,4 @@ public class WebDriverController {
   }
 
 
-  @RequestMapping(method = RequestMethod.POST,value = "/addUsersFromCSV", produces = "application/json", consumes = "multipart/form-data")
-  public void AddUsersFromCSV(@RequestParam("file") MultipartFile file) throws IOException {
-
-    Reader reader = new InputStreamReader(file.getInputStream());
-    CSVParser parser = CSVFormat.DEFAULT.withHeader().withTrim().parse(reader);
-
-    for (CSVRecord record : parser) {
-      UserDTO userDTO = new UserDTO();
-      userDTO.setAuthNo(record.get("Authno"));
-      userDTO.setTmUsername(record.get("UserDTO Name"));
-      userDTO.setActiveDate(false);
-      userDTO.setDeputyNo("");
-
-      log.info("Adding user: " + userDTO.toString());
-
-      userCreationService.makeNewUser(userDTO);
-
-    }
-  }
 }
