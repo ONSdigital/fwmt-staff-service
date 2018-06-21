@@ -3,7 +3,7 @@
 //import lombok.extern.slf4j.Slf4j;
 //import org.springframework.http.ResponseEntity;
 //import org.springframework.web.bind.annotation.*;
-//import uk.gov.ons.fwmt.staff_service.data.User;
+//import uk.gov.ons.fwmt.staff_service.data.dto.UserDTO;
 //
 //import java.util.List;
 //
@@ -17,19 +17,19 @@
 //  }
 //
 //  @PostMapping(produces = "application/json")
-//  public ResponseEntity<?> createUser(User user) {
+//  public ResponseEntity<?> createUser(UserDTO user) {
 //    // TODO implement
 //    return null;
 //  }
 //
 //  @PatchMapping(produces = "application/json")
-//  public ResponseEntity<?> updateUser(Long userId, User user) {
+//  public ResponseEntity<?> updateUser(Long userId, UserDTO user) {
 //    // TODO implement
 //    return null;
 //  }
 //
 //  @GetMapping(produces = "application/json")
-//  public List<User> listUsers() {
+//  public List<UserDTO> listUsers() {
 //    // TODO implement
 //    return null;
 //  }

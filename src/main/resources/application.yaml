@@ -12,7 +12,7 @@ server:
 
 spring:
   application:
-    name: fwmt-job-service
+    name: fwmt-staff-service
   http.multipart:
     max-file-size: 12800MB
     max-request-size: 12800MB
@@ -52,3 +52,12 @@ totalmobile:
     login-url: "/Live/WebAdmin/Login"
     save-user-url: "/Live/WebAdmin/Administration/Users/SaveUser"
 
+service:
+  resource:
+    username: "user"
+    password: "password"
+    baseUrl: "http://localhost:9093/resources"
+    operation:
+      users:
+        find:
+          path: "/users/"

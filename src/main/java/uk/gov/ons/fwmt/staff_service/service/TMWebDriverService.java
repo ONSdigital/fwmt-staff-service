@@ -9,4 +9,5 @@ public interface TMWebDriverService {
   void makeNewUser(UserForm userForm) throws IOException;
 
   void makeNewUsers(List<UserForm> userForms) throws IOException;
+
 }
