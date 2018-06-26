@@ -12,7 +12,9 @@ import org.springframework.web.multipart.MultipartFile;
 import uk.gov.ons.fwmt.staff_service.data.UserForm;
 import uk.gov.ons.fwmt.staff_service.service.TMWebDriverService;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.List;
 
 @Slf4j
@@ -59,4 +61,5 @@ public class WebDriverController {
       tmWebDriverService.makeNewUser(form);
     }
   }
+
 }
