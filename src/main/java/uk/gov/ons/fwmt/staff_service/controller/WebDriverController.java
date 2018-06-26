@@ -5,12 +5,12 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import uk.gov.ons.fwmt.staff_service.data.dto.UserDTO;
 import uk.gov.ons.fwmt.staff_service.data.UserForm;
 import uk.gov.ons.fwmt.staff_service.service.TMWebDriverService;
-import uk.gov.ons.fwmt.staff_service.service.UserCreationService;
 
 import java.io.IOException;
 import java.io.InputStreamReader;

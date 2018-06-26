@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserDTO {
 
-    public String authNo;
-    public String tmUsername;
-    public Boolean active;
-    public String deputyNo;
+  public String authNo;
+  public String tmUsername;
+  public Boolean active;
+  public String deputyNo;
 }

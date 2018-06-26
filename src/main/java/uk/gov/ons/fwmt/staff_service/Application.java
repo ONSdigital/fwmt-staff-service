@@ -21,7 +21,6 @@ public class Application {
   @Value("${service.resource.password}")
   private String password;
 
-
   public static void main(String[] args) {
     SpringApplication.run(Application.class, args);
   }

@@ -30,30 +30,32 @@ public class StaffController {
     this.userCreationService = userCreationService;
   }
 
-  @RequestMapping(method = RequestMethod.POST,value = "/addUsersFromCSV", produces = "application/json", consumes = "multipart/form-data")
-  public void AddUsersFromCSV(@RequestParam("file") MultipartFile file) throws IOException {
+  protected static UserDTO buildUserDTO(String authNo, String username, String active, String deputyNo) {
+
+    boolean activeStatus;
+
+    if (active.equalsIgnoreCase("yes")) {
+      activeStatus = true;
+    } else {
+      activeStatus = false;
+    }
+    UserDTO userDTO = UserDTO.builder().authNo(authNo).tmUsername(username).active(activeStatus).deputyNo(deputyNo)
+        .build();
+    return userDTO;
+  }
+
+  @RequestMapping(method = RequestMethod.POST, value = "/addUsersFromCSV", produces = "application/json", consumes = "multipart/form-data")
+  public void addUsersFromCSV(@RequestParam("file") MultipartFile file) throws IOException {
 
     Reader reader = new InputStreamReader(file.getInputStream());
     CSVParser parser = CSVFormat.DEFAULT.withHeader().withTrim().parse(reader);
 
     for (CSVRecord record : parser) {
-      UserDTO userDTO = buildUserDTO(record.get("Authno"),record.get("User Name"),record.get("Active"),record.get("DeputyNo"));
+      UserDTO userDTO = buildUserDTO(record.get("Authno"), record.get("User Name"), record.get("Active"),
+          record.get("DeputyNo"));
 
       log.info("Adding user: " + userDTO.toString());
       userCreationService.makeNewUser(userDTO);
     }
-  }
-
-  static UserDTO buildUserDTO(String authNo, String username, String active, String deputyNo) {
-
-    boolean activeStatus;
-
-    if(active.equalsIgnoreCase("yes")){
-      activeStatus = true;
-    }else {
-      activeStatus = false;
-    }
-    UserDTO userDTO = UserDTO.builder().authNo(authNo).tmUsername(username).active(activeStatus).deputyNo(deputyNo).build();
-    return userDTO;
   }
 }
