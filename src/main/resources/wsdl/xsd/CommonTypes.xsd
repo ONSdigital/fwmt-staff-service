@@ -268,14 +268,14 @@
     <xs:annotation>
       <xs:documentation>
         Defines the identity of a User. You must supply at least one of the available properties to identify the User.
-        Any attributes (information held as name / value pairs) associated with the userDTO may also be included.
+        Any attributes (information held as name / value pairs) associated with the user may also be included.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="ID" type="xs:int" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            Unique identity of a userDTO.
+            Unique identity of a user.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -289,14 +289,14 @@
       <xs:element name="DeviceID" minOccurs="0" maxOccurs="1" type="LongReferenceType">
         <xs:annotation>
           <xs:documentation>
-            ID of the device that the userDTO is assigned to.
+            ID of the device that the user is assigned to.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="Attributes" type="AttributeCollectionType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            Collection of Attributes (name / value pairs) associated with the userDTO.
+            Collection of Attributes (name / value pairs) associated with the user.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -717,49 +717,49 @@
   <xs:complexType name="UserInfoType">
     <xs:annotation>
       <xs:documentation>
-        Defines a type used to represent the information about a userDTO.
+        Defines a type used to represent the information about a user.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="Identity" type="UserType" maxOccurs="1" minOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            Identity of a userDTO.
+            Identity of a user.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="Forename" type="LongReferenceType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            Forename for the userDTO.
+            Forename for the user.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="Surname" type="LongReferenceType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            Surname for the userDTO.
+            Surname for the user.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="PhoneNo" type="LongReferenceType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            Phone Number for the userDTO.
+            Phone Number for the user.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="Email" type="ShortTextType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            Email address for the userDTO.
+            Email address for the user.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="JobTitle" type="LongReferenceType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            Job title for the userDTO.
+            Job title for the user.
           </xs:documentation>
         </xs:annotation>
       </xs:element>

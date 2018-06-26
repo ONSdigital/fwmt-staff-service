@@ -57,7 +57,7 @@
       <!--<s:complexType name="RequestVisitRequest">-->
         <!--<s:sequence>-->
           <!--<s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />-->
-          <!--<s:element minOccurs="1" maxOccurs="1" name="UserDTO" type="s3:UserType" />-->
+          <!--<s:element minOccurs="1" maxOccurs="1" name="User" type="s3:UserType" />-->
           <!--<s:element minOccurs="0" maxOccurs="1" name="WorkType" type="s:string" />-->
         <!--</s:sequence>-->
       <!--</s:complexType>-->
@@ -89,7 +89,7 @@
         <!--<s:sequence>-->
           <!--<s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />-->
           <!--<s:element minOccurs="1" maxOccurs="1" name="WorkType" type="s:string" />-->
-          <!--<s:element minOccurs="1" maxOccurs="1" name="UserDTO" type="s3:UserType" />-->
+          <!--<s:element minOccurs="1" maxOccurs="1" name="User" type="s3:UserType" />-->
           <!--<s:element minOccurs="0" maxOccurs="1" name="Company" type="s:string" />-->
           <!--<s:element minOccurs="1" maxOccurs="1" name="Reference" type="s:string" />-->
         <!--</s:sequence>-->
@@ -414,7 +414,7 @@
       <!--</s:complexType>-->
       <!--<s:complexType name="FormResultType">-->
         <!--<s:sequence>-->
-          <!--<s:element minOccurs="1" maxOccurs="1" name="UserDTO" type="s3:UserType" />-->
+          <!--<s:element minOccurs="1" maxOccurs="1" name="User" type="s3:UserType" />-->
           <!--<s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />-->
           <!--<s:element minOccurs="1" maxOccurs="1" name="Form" type="s4:FormIdentityType" />-->
           <!--<s:element minOccurs="0" maxOccurs="1" name="Association" type="s4:AssociationType" />-->
@@ -623,7 +623,7 @@
       <!--</s:complexType>-->
       <!--<s:complexType name="StockRequestBase">-->
         <!--<s:sequence>-->
-          <!--<s:element minOccurs="1" maxOccurs="1" name="UserDTO" type="s3:UserType" />-->
+          <!--<s:element minOccurs="1" maxOccurs="1" name="User" type="s3:UserType" />-->
           <!--<s:element minOccurs="1" maxOccurs="1" name="Store" type="s8:StoreType" />-->
           <!--<s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />-->
           <!--<s:element minOccurs="0" maxOccurs="1" name="Reason" type="s3:ReasonType" />-->
@@ -745,7 +745,7 @@
         <!--<s:sequence>-->
           <!--<s:element minOccurs="1" maxOccurs="1" name="Reference" type="s:string" />-->
           <!--<s:element minOccurs="1" maxOccurs="1" name="Worktype" type="s:string" />-->
-          <!--<s:element minOccurs="1" maxOccurs="1" name="UserDTO" type="s3:UserType" />-->
+          <!--<s:element minOccurs="1" maxOccurs="1" name="User" type="s3:UserType" />-->
           <!--<s:element minOccurs="1" maxOccurs="1" name="StartTime" type="s:dateTime" />-->
           <!--<s:element minOccurs="1" maxOccurs="1" name="EndTime" type="s:dateTime" />-->
           <!--<s:element minOccurs="1" maxOccurs="1" name="TimeType" type="s11:TimeTypeType" />-->
@@ -768,7 +768,7 @@
           <!--<s:element minOccurs="0" maxOccurs="1" name="Location" type="s13:LocationInfoType" />-->
           <!--<s:element minOccurs="0" maxOccurs="1" name="DeviceLocation" type="s13:LocationInfoType" />-->
           <!--<s:element minOccurs="1" maxOccurs="1" name="Association" type="s13:AssociationType" />-->
-          <!--<s:element minOccurs="1" maxOccurs="1" name="UserDTO" type="s3:UserType" />-->
+          <!--<s:element minOccurs="1" maxOccurs="1" name="User" type="s3:UserType" />-->
           <!--<s:element minOccurs="1" maxOccurs="1" name="RequestTime" type="s:dateTime" />-->
           <!--<s:element minOccurs="1" maxOccurs="1" name="ResponseTime" type="s:dateTime" />-->
           <!--<s:element minOccurs="1" maxOccurs="1" name="Text" type="s:string" />-->

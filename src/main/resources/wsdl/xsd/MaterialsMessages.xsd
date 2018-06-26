@@ -288,7 +288,7 @@
           <xs:element name="ResponseRequired" type="tmmt:ReceiptResponseRequirementType" minOccurs="1" maxOccurs="1">
             <xs:annotation>
               <xs:documentation>
-                Indicates required handling of receipt notification - acknowledgement may be auto-generated or a userDTO response
+                Indicates required handling of receipt notification - acknowledgement may be auto-generated or a userresponse
                 may be required.
               </xs:documentation>
             </xs:annotation>
@@ -331,7 +331,7 @@
   <xs:complexType name ="StoreChangeRequest">
     <xs:annotation>
       <xs:documentation>
-        Defines an abstract message relating to a store change by a userDTO.
+        Defines an abstract message relating to a store change by a user.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

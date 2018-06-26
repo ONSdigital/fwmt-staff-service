@@ -205,7 +205,7 @@
       <xs:element name="Actual" type="tmct:DateTimeRangeType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            The actual start and end time for the Visit as captured by the userDTO. This is only populated in messages coming from a device.
+            The actual start and end time for the Visit as captured by the user. This is only populated in messages coming from a device.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -861,7 +861,7 @@
       <xs:element name="User" type="tmct:UserType" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            TotalMobile userDTO which identifies the owner of the Visit.
+            TotalMobile user which identifies the owner of the Visit.
           </xs:documentation>
         </xs:annotation>
       </xs:element>

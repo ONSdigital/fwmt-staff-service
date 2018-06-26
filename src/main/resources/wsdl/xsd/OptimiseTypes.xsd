@@ -169,14 +169,14 @@
       <xs:element name="UserId" type="xs:int" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            The userDTO ID for the Resource.
+            The user ID for the Resource.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="UserKey" type="tmct:LongReferenceType" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            The userDTO key for the Resource.
+            The user key for the Resource.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -506,7 +506,7 @@
       <xs:element name="VisitStatus" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            Current status of the visit (which is on the userDTO's device).
+            Current status of the visit (which is on the user's device).
           </xs:documentation>
         </xs:annotation>
         <xs:simpleType>
@@ -1325,7 +1325,7 @@
       <xs:element name="Username" type="tmct:LongReferenceType" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            The username of the userDTO who made the change.
+            The username of the user who made the change.
           </xs:documentation>
         </xs:annotation>
       </xs:element>

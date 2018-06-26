@@ -323,14 +323,14 @@
   <xs:complexType name="UserNotificationBase" abstract="true">
     <xs:annotation>
       <xs:documentation>
-        Base userDTO notification message containing userDTO, device and attribute details.
+        Base user notification message containing user, device and attribute details.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="User" type="tmct:UserInfoType" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            User details for the userDTO.
+            User details for the user.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -341,7 +341,7 @@
   <xs:complexType name="CreateUserNotification">
     <xs:annotation>
       <xs:documentation>
-        A message containing userDTO, device and attribute details for a new userDTO.
+        A message containing user, device and attribute details for a new user.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -354,7 +354,7 @@
   <xs:complexType name="UpdateUserNotification">
     <xs:annotation>
       <xs:documentation>
-        A message containing userDTO, device and attribute details for an existing userDTO.
+        A message containing user, device and attribute details for an existing user.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -367,7 +367,7 @@
   <xs:complexType name="DeleteUserNotification">
     <xs:annotation>
       <xs:documentation>
-        A message containing userDTO, device and attribute details for the deleted userDTO.
+        A message containing user, device and attribute details for the deleted user.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -385,7 +385,7 @@
           <xs:element name="Timestamp" minOccurs="1" maxOccurs="1" type="xs:dateTime">
             <xs:annotation>
               <xs:documentation>
-                Date Time that the userDTO was deleted.
+                Date Time that the user was deleted.
               </xs:documentation>
             </xs:annotation>
           </xs:element>
@@ -393,7 +393,7 @@
           <xs:element name="UpdatedName" minOccurs="1" maxOccurs="1" type="tmct:LongReferenceType">
             <xs:annotation>
               <xs:documentation>
-                The updated Username to allow the original username to be used again for another userDTO.
+                The updated Username to allow the original username to be used again for another user.
               </xs:documentation>
             </xs:annotation>
           </xs:element>

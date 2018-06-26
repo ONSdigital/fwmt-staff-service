@@ -126,7 +126,7 @@
         <xs:element name="SystemDate" type="xs:dateTime" minOccurs="0" maxOccurs="1">
           <xs:annotation>
             <xs:documentation>
-              Date the Visit was actually completed.  This is the date recorded by the system and not the userDTO selected date.
+              Date the Visit was actually completed.  This is the date recorded by the system and not the user selected date.
             </xs:documentation>
           </xs:annotation>
         </xs:element>
@@ -167,7 +167,7 @@
   <xs:complexType name="RecallVisitRequestBase" abstract="true">
     <xs:annotation>
       <xs:documentation>
-        Requests that the visit with the specified reference is recalled from the specified userDTO.
+        Requests that the visit with the specified reference is recalled from the specified user.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -286,7 +286,7 @@
   <xs:complexType name="RequestVisitRequest">
     <xs:annotation>
       <xs:documentation>
-        Request for a new visit from the specified userDTO
+        Request for a new visit from the specified user
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -399,7 +399,7 @@
       <xs:element name="Actual" type="tmct:DateTimeRangeType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            The actual start and end time for the Visit as captured by the userDTO.
+            The actual start and end time for the Visit as captured by the user.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -531,7 +531,7 @@
   <xs:complexType name="ClientUpdateVisitScheduleNotification">
     <xs:annotation>
       <xs:documentation>
-        Notification to indicate that the scheduled start and end time of a Visit has been changed by a userDTO.
+        Notification to indicate that the scheduled start and end time of a Visit has been changed by a user.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -540,7 +540,7 @@
           <xs:element name="ClientTimestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1">
             <xs:annotation>
               <xs:documentation>
-                The date when the schedule was updated on the userDTO's device.
+                The date when the schedule was updated on the user's device.
               </xs:documentation>
             </xs:annotation>
           </xs:element>

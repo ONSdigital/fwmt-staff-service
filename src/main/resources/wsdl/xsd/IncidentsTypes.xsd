@@ -45,7 +45,7 @@
       <xs:element name="User" type="tmct:UserType" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            Identification of userDTO recording incident.
+            Identification of user recording incident.
           </xs:documentation>
         </xs:annotation>
       </xs:element>

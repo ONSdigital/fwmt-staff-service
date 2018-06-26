@@ -203,14 +203,14 @@
           <xs:element name="Value" type="tmct:LongTextType" minOccurs="1" maxOccurs="1">
             <xs:annotation>
               <xs:documentation>
-                Value supplied by the userDTO for the element.
+                Value supplied by the user for the element.
               </xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="Description" type="tmct:ShortTextType" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation>
-                Description of the value supplied by the userDTO for the element. Only populated for List elements.
+                Description of the value supplied by the user for the element. Only populated for List elements.
               </xs:documentation>
             </xs:annotation>
           </xs:element>
@@ -233,7 +233,7 @@
           <xs:element name="Value" type="tmct:BinaryContentType" minOccurs="1" maxOccurs="1">
             <xs:annotation>
               <xs:documentation>
-                Binary Value supplied by the userDTO for the element.
+                Binary Value supplied by the user for the element.
               </xs:documentation>
             </xs:annotation>
           </xs:element>
@@ -412,7 +412,7 @@
   <xs:complexType name="OptionsElementResponseType" >
     <xs:annotation>
       <xs:documentation>
-        Specifies a userDTO's selection of answer options to an element.
+        Specifies a user's selection of answer options to an element.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>

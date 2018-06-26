@@ -39,14 +39,14 @@
       <xs:element name="ScheduleFor" type="tmct:UserType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            TotalMobile userDTO which identifies who the work item will be scheduled for.
+            TotalMobile user which identifies who the work item will be scheduled for.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="Schedule" type="tmct:DateTimeRangeType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            Schedule (start and end date / time) to use for this work item. Ignored unless allocated to a userDTO and no pending tasks remain to be added.
+            Schedule (start and end date / time) to use for this work item. Ignored unless allocated to a user and no pending tasks remain to be added.
           </xs:documentation>
         </xs:annotation>
       </xs:element>      
@@ -85,14 +85,14 @@
       <xs:element name="ScheduleFor" type="tmct:UserType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            TotalMobile userDTO which identifies who the work item will be scheduled for.
+            TotalMobile user which identifies who the work item will be scheduled for.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="Schedule" type="tmct:DateTimeRangeType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            Schedule (start and end date / time) to use for this work item. Ignored unless allocated to a userDTO and no pending tasks remain to be added.
+            Schedule (start and end date / time) to use for this work item. Ignored unless allocated to a user and no pending tasks remain to be added.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -117,7 +117,7 @@
       <xs:element name="CreatedBy" type="tmct:UserType" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            TotalMobile userDTO that updated the work item.
+            TotalMobile user that updated the work item.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -131,7 +131,7 @@
       <xs:element name="ScheduledFor" type="tmct:UserType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            TotalMobile userDTO which identifies who the work item has been scheduled for.
+            TotalMobile user which identifies who the work item has been scheduled for.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -170,7 +170,7 @@
       <xs:element name="UpdatedBy" type="tmct:UserType" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            TotalMobile userDTO that updated the work item.
+            TotalMobile user that updated the work item.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -184,7 +184,7 @@
       <xs:element name="ScheduledFor" type="tmct:UserType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            TotalMobile userDTO which identifies who the work item has been scheduled for.
+            TotalMobile user which identifies who the work item has been scheduled for.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -223,7 +223,7 @@
       <xs:element name="DeletedBy" type="tmct:UserType" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            TotalMobile userDTO that deleted the work item.
+            TotalMobile user that deleted the work item.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -294,7 +294,7 @@
       <xs:element name="ScheduledBy" type="tmct:UserType" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            TotalMobile userDTO that scheduled the work item.
+            TotalMobile user that scheduled the work item.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -308,7 +308,7 @@
       <xs:element name="ScheduledFor" type="tmct:UserType" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            TotalMobile userDTO which identifies who the work item has been scheduled for.
+            TotalMobile user which identifies who the work item has been scheduled for.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -347,14 +347,14 @@
       <xs:element name="DeletedBy" type="tmct:UserType" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            TotalMobile userDTO that deleted the schedule.
+            TotalMobile user that deleted the schedule.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
 			<xs:element name="DeletedFrom" type="tmct:UserType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>
-						TotalMobile userDTO that the schedule item was removed from.
+						TotalMobile user that the schedule item was removed from.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -386,7 +386,7 @@
       <xs:element name="User" type="tmct:UserType" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            TotalMobile userDTO which identifies who the unavailablity will be scheduled for.
+            TotalMobile user which identifies who the unavailablity will be scheduled for.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -439,7 +439,7 @@
       <xs:element name="User" type="tmct:UserType" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            TotalMobile userDTO which identifies who the unavailablity has been scheduled for.
+            TotalMobile user which identifies who the unavailablity has been scheduled for.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
