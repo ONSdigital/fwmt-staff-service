@@ -134,7 +134,7 @@
       <xs:element name="UserName" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            UserName of the user who added the note
+            UserName of the userDTO who added the note
           </xs:documentation>
         </xs:annotation>
         <xs:simpleType>

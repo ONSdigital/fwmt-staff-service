@@ -13,6 +13,6 @@ public class UserDTO {
 
     public String authNo;
     public String tmUsername;
-    public Boolean activeDate;
+    public Boolean active;
     public String deputyNo;
 }

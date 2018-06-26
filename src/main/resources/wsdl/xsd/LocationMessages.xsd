@@ -13,7 +13,7 @@
   <xs:element name="LocateRequest" type="LocateRequest"/>
   <xs:complexType name="LocateRequest">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Request to log location. Contains time and requesting user. Used in conjunction with LocateUsersRequest - LocateRequest sent to each UserType specified.</xs:documentation>
+      <xs:documentation xml:lang="en">Request to log location. Contains time and requesting userDTO. Used in conjunction with LocateUsersRequest - LocateRequest sent to each UserType specified.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="RequestingUser" type="tmct:UserType" maxOccurs="1" minOccurs="1">

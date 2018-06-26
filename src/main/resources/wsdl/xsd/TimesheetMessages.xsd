@@ -57,7 +57,7 @@
       <xs:element name="User" type="tmct:UserType" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            TotalMobile user which identifies the owner of the Visit/Job.
+            TotalMobile userDTO which identifies the owner of the Visit/Job.
           </xs:documentation>
         </xs:annotation>
       </xs:element>

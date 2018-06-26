@@ -108,7 +108,7 @@
       <xs:element name="User" type="tmct:UserType" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            User identity of the user who this timesheet is for.
+            User identity of the userDTO who this timesheet is for.
           </xs:documentation>
         </xs:annotation>
       </xs:element>

@@ -238,21 +238,21 @@
       <xs:enumeration value="Standard">
         <xs:annotation>
           <xs:documentation>
-            A user ackowledgement is required but can be provided at the user's convenience.
+            A userDTO ackowledgement is required but can be provided at the userDTO's convenience.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Immediate">
         <xs:annotation>
           <xs:documentation>
-            The user is required to acknowledge the receipt before continuing with other tasks.
+            The userDTO is required to acknowledge the receipt before continuing with other tasks.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Auto">
         <xs:annotation>
           <xs:documentation>
-            The receipt should be acknowledged automatically and the user notified afterwards.
+            The receipt should be acknowledged automatically and the userDTO notified afterwards.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>

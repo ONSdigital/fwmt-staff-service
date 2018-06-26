@@ -13,7 +13,7 @@
     <xs:complexType name="DataExportRequest">
       <xs:annotation>
         <xs:documentation>
-          Request sent when a user chooses to export a device database. This message is sent to indicate that a user is exporting.
+          Request sent when a userDTO chooses to export a device database. This message is sent to indicate that a userDTO is exporting.
         </xs:documentation>
       </xs:annotation>
       <xs:sequence>
@@ -60,7 +60,7 @@
     <xs:complexType name="SigninUserRequest">
       <xs:annotation>
         <xs:documentation>
-          Defines a message to indicate when a user has signed in.
+          Defines a message to indicate when a userDTO has signed in.
         </xs:documentation>
       </xs:annotation>
       <xs:sequence>
@@ -74,7 +74,7 @@
         <xs:element name="Date" minOccurs="1" maxOccurs="1" type="xs:dateTime">
           <xs:annotation>
             <xs:documentation>
-              Date and Time the user signed in.
+              Date and Time the userDTO signed in.
             </xs:documentation>
           </xs:annotation>
         </xs:element>        

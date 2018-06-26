@@ -50,7 +50,7 @@
   <xs:complexType name="AddFolioContentRequest">
     <xs:annotation>
       <xs:documentation>
-        Defines the adding of an item to a user's folio.
+        Defines the adding of an item to a userDTO's folio.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
