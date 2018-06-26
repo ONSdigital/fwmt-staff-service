@@ -48,10 +48,10 @@ public class StaffController {
 
     boolean activeStatus;
 
-    if(active!="Yes"){
-      activeStatus = false;
-    }else {
+    if(active.equalsIgnoreCase("yes")){
       activeStatus = true;
+    }else {
+      activeStatus = false;
     }
     UserDTO userDTO = UserDTO.builder().authNo(authNo).tmUsername(username).active(activeStatus).deputyNo(deputyNo).build();
     return userDTO;
