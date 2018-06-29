@@ -51,7 +51,7 @@ public class StaffController {
     CSVParser parser = CSVFormat.DEFAULT.withHeader().withTrim().parse(reader);
 
     for (CSVRecord record : parser) {
-      UserDTO userDTO = buildUserDTO(record.get("Authno"), record.get("User Name"), record.get("Active"),
+      UserDTO userDTO = buildUserDTO(record.get("Authno"), record.get("Username"), record.get("Active"),
           record.get("DeputyNo"));
 
       log.info("Adding user: " + userDTO.toString());
