@@ -44,7 +44,7 @@ public class StaffController {
     return userDTO;
   }
 
-  @RequestMapping(method = RequestMethod.POST, value = "/addUsersFromCSV", produces = "application/json", consumes = "multipart/form-data")
+  @RequestMapping(method = RequestMethod.POST, value = "/activateUsersFromCSV", produces = "application/json", consumes = "multipart/form-data")
   public void addUsersFromCSV(@RequestParam("file") MultipartFile file) throws IOException {
 
     Reader reader = new InputStreamReader(file.getInputStream());
