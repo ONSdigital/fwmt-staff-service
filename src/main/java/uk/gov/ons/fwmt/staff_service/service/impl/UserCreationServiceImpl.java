@@ -20,10 +20,12 @@ public class UserCreationServiceImpl implements UserCreationService {
   private String userCreateUrl;
 
   @Autowired
-  public UserCreationServiceImpl(RestTemplate restTemplate, @Value("${service.resource.baseUrl}") String baseUrl,
-      @Value("${service.resource.operation.users.find.path}") String UserPath) {
+  public UserCreationServiceImpl(
+      RestTemplate restTemplate,
+      @Value("${service.resource.baseUrl}") String baseUrl,
+      @Value("${service.resource.operation.users.find.path}") String createUserPath) {
     this.restTemplate = restTemplate;
-    userCreateUrl = baseUrl + UserPath;
+    this.userCreateUrl = baseUrl + createUserPath;
   }
 
   public boolean makeNewUser(UserDTO userDTO) {
