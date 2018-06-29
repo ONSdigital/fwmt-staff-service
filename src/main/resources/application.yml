@@ -60,4 +60,8 @@ service:
     operation:
       users:
         find:
+          path: "/users/auth/{authNo}"
+        findAlt:
+          path: "/users/alternative/{altAuthNo}"
+        create:
           path: "/users/"
