@@ -23,7 +23,7 @@ public class UserCreationServiceImpl implements UserCreationService {
   public UserCreationServiceImpl(
       RestTemplate restTemplate,
       @Value("${service.resource.baseUrl}") String baseUrl,
-      @Value("${service.resource.operation.users.find.path}") String createUserPath) {
+      @Value("${service.resource.operation.users.create.path}") String createUserPath) {
     this.restTemplate = restTemplate;
     this.userCreateUrl = baseUrl + createUserPath;
   }
