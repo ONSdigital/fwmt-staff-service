@@ -1,30 +1,28 @@
-
 language: java
 jdk: oraclejdk8
-
 services:
   - docker
-
-#cache:
-#  directories:
-#  - $HOME/.cache
-#
-
-script: 
+script:
   - "./gradlew check"
-
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-
 env:
-  - "SPRING_PROFILES_ACTIVE=default,integration-tests"
-
+  global:
+    - SPRING_PROFILES_ACTIVE=default,integration-tests
+    - secure: h9Va+LNgNzEqwoR6e+55wKaeOvCXnRhX6csWTxDmacXUPHczWse1AzM2sn8cBUq7HSQ3fZ+40hDrhIdxaKxEQ/aoAFnBtkFppSjnOK2OZi/6HWfaKvFAjwa8ACnhZPBe0kb1vhdNxXn1UZ1K+OnXXiZVub/Zsi+7tY12UJx988A0P3dPBh/nfLn7PK8MB4FthR609f9H0JAxjHjGRozfcLCQURg7nBTEM4mGUi4vE98sDlxotJJHGzLCSV1+t8ThLPyHglLeFsA57D24PRS8MQD7h1N8p+RtNruSqNQUitHGaeyLoJxZCpwF9lyEeUdxyoFo1/wHH0U5bhAIZlL2Oekk8BlAs/cjrSlnqQ+mDYdvdgPzrZ8cjZ9XwW56BRYpq2iN1X+DulH/PioC+/C3baPDzo72YUto/cI3mEWKOhENVCiJYR3VvYrfTKFVvVbRJn1wVCh8npDBqmTbZd7ggNalBZ3r67eq3jz62M00+5i0XduAj7oj1zDdUNryTi+Jvbt+v1AgBwQ6C/ES9gVAqf0c/oopftDvEEbmSJO5P4tZVOQHIWdet+MAzG845rSEIp0EzJaxlR91Xv64x8whPZpyjyTT6NjkHc0u4WDjGgNgZnTkLjd/U/tWvHrdnJO9Gs5VKyzcdevMACkVc/iurPuA2WLPunI0FVTlabVRDQ8=
+    - secure: NbHZ0UPCxa0/J/RU77mstOXrAv62wu3mLSAnbR8/DXSdoaCTvjep2laQsFb99o89IZcGMTFXIHXcW/7x2wi1KLXicCSqaVv5bS5Emw9RaxxavcFJoy4uTsFKlN2K8OZz+czz05FfwklrQLTL+9xqQWDUvoH9e2APcycsKNvBxaijlOtTbUsoyYvA+bq//SJ4lFMDunAbCWnPCvYlRf6j0KxyyXzSGgWzKw4YPfRYuNfMHQdQvXBe3YQ1Yh9Vi4mxRnSIXjj7bKt7QTuKkdKfkYETyza2MXbWXf39fkobh+ZIOs0ovZJGR3y3/FnucxXExMNk6Hc7OIpVr23pUxxrZ1DK9iWJTlDct/R/De5IxskPH10ijk52vv9TlzskZ7+ICFbdMdeMlnswUFpvm4SPIYBeXUjN+vID8zpxaZlqLUlLLZEQgxDfaXqV7fVyHkSW6EqpPzWdSe3mLm1sLvlKJ8Rytb/37KPUfKZ1uqdTpKlhPtjXBqrPNwCXACe33zbfimXp7WrZWUt81isM2BQuBEGLr4ePWqgHEQdqnZqr2Ar/3yn3AI03+7Plgpu44vA9KBCrDohPVnSr2xWF6bAkeUVoQRprcBLZfC55/ZXHN9fmdDzlB5ecm7vImoFSnWzAMQvIfI9RrpeBQL8V6v1n2LG8ocXXz2EbkL0ZKkyL4z4=
 branches:
   only:
     - master
-
 notifications:
   slack:
     secure: zeLxHE+z8RXsge7imwHbv4HuqpsMWlnvDXovlZH3iQW//6TrsgYT4arEp/NDV6jTYtMgLWmm4ou2nLu+AaYLmXIkp4Pt8z0xKnx8NPT8UsZn7f6gqK7Abah4YnrB4uHwnVzzVNlb0jmjWClVCNxR73GI+324pnxOjOSP4In8iCwX+fm9yKAhlaE1VMTVsjE2oTl+ECECmG4fWmDthg1gb6edLquUX04fhc0gDBmQ4c0mxoBSfhAI3eV22IehOiRMBwElPAcfZ0bWDK19AniGfYeyWYX+a1v4Mxy880oxsFIeCqJBQTw7j0DslF0VoZeJw2GTsecC2FTB9JiYX24wy/hCsAtwIZB/JX4znx5CsyDbKpvL1bcfKLg0MuBbZAkqFLS6K0pppgMd1McH2Og+ZTZyIogbWtW4Hvvgn9fNoU3RosxM3xwRcI560DjGdEKjuZikxC5mcuMuiNKR7rFNL8wA5beHc+yNBoF2VHuuJOG4zTgG0FOfdn4Chd9b+NN23Jhdny0WwCOfFneVfOkgkAvlvtN73YImlKHYBb3rE9/+lqAuwxmpYumKrkOFt95WW4vEBW2mUi4txYNK8uuTVA7CM+/h8mkAcgX9f0uES+fRA5/vegPnZuRVcnGhgLEQZ4EgYts0jJtYI+RzPuSMiMDA2R/Prgq/SvPhTmBwWxE=
     on_failure: always
     on_success: never
+after_script:
+  - if [ "$TRAVIS_BRANCH" = "master" && "$TRAVIS_PULL_REQUEST" == "false" ];
+    then echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin;
+    docker build -t fwmtstaffsvc --build-arg jar=build/libs/fwmt-staff-service-1.0.0.jar .;
+    docker tag fwmtstaffsvc sdcplatform/fwmtstaffsvc:$TRAVIS_BUILD_NUMBER;
+    docker push sdcplatform/fwmtstaffsvc;
+    fi
