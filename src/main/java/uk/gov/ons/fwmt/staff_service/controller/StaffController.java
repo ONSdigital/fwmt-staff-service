@@ -72,7 +72,7 @@ public class StaffController {
               record.get("DeputyNo"));
 
       log.info("change active status User: " + userDTO.toString() + " to " + userDTO.active);
-      userCreationService.updateActiveStatusForUser(userDTO);
+      userCreationService.updateUser(userDTO);
     }
   }
 }
