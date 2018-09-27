@@ -6,5 +6,5 @@ public interface UserCreationService {
 
   boolean makeNewUser(UserDTO userDTO);
 
-  boolean updateActiveStatusForUser(UserDTO userDTO);
+  boolean updateUser(UserDTO userDTO);
 }

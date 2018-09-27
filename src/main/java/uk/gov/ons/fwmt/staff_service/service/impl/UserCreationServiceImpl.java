@@ -18,7 +18,6 @@ public class UserCreationServiceImpl implements UserCreationService {
 
   private RestTemplate restTemplate;
   private String userCreateUrl;
-  private String userUpdateUrl;
 
   @Autowired
   public UserCreationServiceImpl(
@@ -40,7 +39,7 @@ public class UserCreationServiceImpl implements UserCreationService {
     return false;
   }
 
-  public boolean updateActiveStatusForUser(UserDTO userDTO) {
+  public boolean updateUser(UserDTO userDTO) {
     try {
       restTemplate.put(userCreateUrl,userDTO);
     } catch (HttpClientErrorException httpClientErrorException) {
