@@ -23,7 +23,7 @@ public class UserCreationServiceImpl implements UserCreationService {
   public UserCreationServiceImpl(
       RestTemplate restTemplate,
       @Value("${service.resource.baseUrl}") String baseUrl,
-      @Value("${service.resource.operation.users.create.path}") String createUserPath) {
+      @Value("${service.resource.operation.users.create.path}") String createUserPath){
     this.restTemplate = restTemplate;
     this.userCreateUrl = baseUrl + createUserPath;
   }
@@ -33,6 +33,15 @@ public class UserCreationServiceImpl implements UserCreationService {
       final HttpEntity<UserDTO> request = new HttpEntity<>(userDTO);
       final ResponseEntity responseEntity = restTemplate.postForEntity(userCreateUrl, request, UserDTO.class, userDTO);
       return responseEntity.getStatusCode().equals(HttpStatus.CREATED);
+    } catch (HttpClientErrorException httpClientErrorException) {
+      log.error("An error occurred while communicating with the resource service", httpClientErrorException);
+    }
+    return false;
+  }
+
+  public boolean updateUser(UserDTO userDTO) {
+    try {
+      restTemplate.put(userCreateUrl,userDTO);
     } catch (HttpClientErrorException httpClientErrorException) {
       log.error("An error occurred while communicating with the resource service", httpClientErrorException);
     }

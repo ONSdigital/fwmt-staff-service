@@ -5,4 +5,6 @@ import uk.gov.ons.fwmt.staff_service.data.dto.UserDTO;
 public interface UserCreationService {
 
   boolean makeNewUser(UserDTO userDTO);
+
+  boolean updateUser(UserDTO userDTO);
 }

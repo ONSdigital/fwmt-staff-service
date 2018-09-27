@@ -36,7 +36,9 @@ public class StaffController {
 
     if (active.equalsIgnoreCase("yes")) {
       activeStatus = true;
-    } else {
+    } else if (active.equalsIgnoreCase("no")) {
+      activeStatus = false;
+    } else{
       activeStatus = false;
     }
     UserDTO userDTO = UserDTO.builder().authNo(authNo).tmUsername(username).active(activeStatus).deputyNo(deputyNo)
@@ -56,6 +58,21 @@ public class StaffController {
 
       log.info("Adding user: " + userDTO.toString());
       userCreationService.makeNewUser(userDTO);
+    }
+  }
+
+  @RequestMapping(method = RequestMethod.POST, value = "/deactiveUsersFromCSV", produces = "application/json", consumes = "multipart/form-data")
+  public void deactiveUsersFromCSV(@RequestParam("file") MultipartFile file) throws IOException {
+
+    Reader reader = new InputStreamReader(file.getInputStream());
+    CSVParser parser = CSVFormat.DEFAULT.withHeader().withTrim().parse(reader);
+
+    for (CSVRecord record : parser) {
+      UserDTO userDTO = buildUserDTO(record.get("Authno"), record.get("Username"), record.get("Active"),
+              record.get("DeputyNo"));
+
+      log.info("change active status User: " + userDTO.toString() + " to " + userDTO.active);
+      userCreationService.updateUser(userDTO);
     }
   }
 }
