@@ -8,7 +8,7 @@ apply plugin: 'jacoco'
 
 mainClassName = 'uk.gov.ons.fwmt.staff_service.Application'
 
-description = "fwmt-staff-service"
+description = 'fwmt-staff-service'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -20,16 +20,18 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE")
+        classpath('org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE')
     }
 }
 
 repositories {
     mavenCentral()
-    maven { url "http://artifactory-sdc.onsdigital.uk/artifactory/libs-snapshot" }
-    maven { url "http://artifactory-sdc.onsdigital.uk/artifactory/libs-release" }
-    maven { url "https://oss.sonatype.org/content/repositories/libs-snapshot" }
-    maven { url "http://repo.maven.apache.org/maven2" }
+    if (!project.hasProperty('omitSDCArtifactory')) {
+        maven { url 'http://artifactory-sdc.onsdigital.uk/artifactory/libs-snapshot' }
+        maven { url 'http://artifactory-sdc.onsdigital.uk/artifactory/libs-release' }
+    }
+    maven { url 'https://oss.sonatype.org/content/repositories/libs-snapshot' }
+    maven { url 'http://repo.maven.apache.org/maven2' }
 }
 
 configurations {
@@ -45,27 +47,27 @@ task genJaxb {
 
     doLast() {
         project.ant {
-            taskdef name: "xjc", classname: "com.sun.tools.xjc.XJCTask", classpath: configurations.jaxb.asPath
+            taskdef name: 'xjc', classname: 'com.sun.tools.xjc.XJCTask', classpath: configurations.jaxb.asPath
             mkdir(dir: sourcesDir)
             mkdir(dir: classesDir)
 
             xjc(destdir: sourcesDir) {
-                arg(value: "-wsdl")
-                produces(dir: sourcesDir, includes: "**/*.java")
-                schema(dir: schema, includes: "**/*.wsdl")
+                arg(value: '-wsdl')
+                produces(dir: sourcesDir, includes: '**/*.java')
+                schema(dir: schema, includes: '**/*.wsdl')
             }
 
             javac(destdir: classesDir, source: 1.8, target: 1.8, debug: true,
-                    debugLevel: "lines,vars,source",
+                    debugLevel: 'lines,vars,source',
                     classpath: configurations.jaxb.asPath) {
                 src(path: sourcesDir)
-                include(name: "**/*.java")
-                include(name: "*.java")
+                include(name: '**/*.java')
+                include(name: '*.java')
             }
 
             copy(todir: classesDir) {
                 fileset(dir: sourcesDir, erroronmissingdir: false) {
-                    exclude(name: "**/*.java")
+                    exclude(name: '**/*.java')
                 }
             }
         }
@@ -76,43 +78,49 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-core', version: '1.5.13.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.13.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web-services', version: '1.5.13.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.5.13.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.5.13.RELEASE'
     compile(group: 'org.springframework.cloud', name: 'spring-cloud-spring-service-connector', version: '1.2.5.RELEASE') {
         exclude(module: 'log4j')
     }
     compile group: 'org.springframework.cloud', name: 'spring-cloud-cloudfoundry-connector', version: '1.2.5.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.5.13.RELEASE'
+
+    compile group: 'org.apache.commons', name: 'commons-csv', version: '1.5'
     compile(group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3') {
         exclude(module: 'commons-logging')
     }
+
     compile group: 'org.jsoup', name: 'jsoup', version: '1.11.3'
     compile group: 'org.json', name: 'json', version: '20180130'
     compile group: 'org.projectlombok', name: 'lombok', version: '1.16.18'
     compile group: 'org.yaml', name: 'snakeyaml', version: '1.18'
-    compile group: 'org.apache.commons', name: 'commons-csv', version: '1.5'
+
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.0'
     compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.0'
-    compile(files(genJaxb.classesDir).builtBy(genJaxb))
-    jaxb "com.sun.xml.bind:jaxb-xjc:2.1.7"
 
-    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.9.RELEASE') {
+    jaxb group: 'com.sun.xml.bind', name: 'jaxb-xjc', version: '2.1.7'
+    compile(files(genJaxb.classesDir).builtBy(genJaxb))
+
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.13.RELEASE') {
         exclude(module: 'android-json')
     }
+
     testCompile group: 'io.cucumber', name: 'cucumber-java', version: '2.3.1'
     testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '2.3.1'
     testCompile group: 'io.cucumber', name: 'cucumber-spring', version: '2.3.1'
-    testCompile "junit:junit:4.12"
-    testCompile("org.springframework.boot:spring-boot-starter-test")
+
+    testCompile 'junit:junit:4.12'
 
 }
 
 processResources {
     filter ReplaceTokens, tokens: [
-            "project.artifactId": "name",
-            "project.version"   : "version",
-            "scm.url"           : "url",
-            "buildNumber"       : "buildnumber",
-            "scmBranch"         : "branch",
-            "timestamp"         : "timestamp",
+            'project.artifactId': 'name',
+            'project.version'   : 'version',
+            'scm.url'           : 'url',
+            'buildNumber'       : 'buildnumber',
+            'scmBranch'         : 'branch',
+            'timestamp'         : 'timestamp',
     ]
 }
 
